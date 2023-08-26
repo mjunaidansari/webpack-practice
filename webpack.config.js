@@ -7,7 +7,18 @@ const config = () => {
 			path: path.resolve(__dirname, 'build'),
 			filename: 'main.js'
 		},
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-react'],
+					},
+				},
+			],
+		},
 	}
 }
 
-module.export = config
+module.exports = config
